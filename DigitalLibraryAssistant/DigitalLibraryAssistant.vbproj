@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\TestController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,9 +206,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Pages\Home.html" />
-    <Content Include="Pages\Index.html" />
-    <Content Include="Pages\Test.html" />
     <Content Include="Scripts\AngularJS\angular.min.js" />
     <Content Include="Scripts\App\App.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -228,7 +226,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Templates\Index.html" />
-    <Content Include="Templates\test.html" />
+    <Content Include="Templates\Test.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

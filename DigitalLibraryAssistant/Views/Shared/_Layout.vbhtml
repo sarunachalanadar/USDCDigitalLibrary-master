@@ -9,13 +9,12 @@
     <script src="/Scripts/AngularJS/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="/Scripts/App/App.js"></script>
+
     <!--Styles-->
-    <!--Controllers-->
-    <!--Services-->
 </head>
-<body ng-controller="mainController">
+<body ng-controller="homeController">
     <nav>
-        <h1>Header Coming Soon</h1>
+        <h1>Layout Header</h1>
     </nav>
     <div class="container body-content">
         @RenderBody()
