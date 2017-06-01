@@ -13,14 +13,14 @@
     <!--Styles-->
 </head>
 <body ng-controller="homeController">
-    <nav>
+    @*<nav>
         <h1>Layout Header</h1>
-    </nav>
-    <div class="container body-content">
+    </nav>*@
+    @*<div class="container body-content">*@
         @RenderBody()
-    </div>
-    <footer>
+    @*</div>*@
+    @*<footer>
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
+    </footer>*@
 </body>
 </html>
