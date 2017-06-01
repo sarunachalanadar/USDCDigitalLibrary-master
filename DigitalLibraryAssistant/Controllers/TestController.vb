@@ -16,10 +16,9 @@ Namespace Controllers
         End Function
 
         ' POST: api/Test
-        <HttpPost()>
-        Public Function PostValue(<FromBody()> ByVal value As String) As Integer
-            Return (5 + Convert.ToInt32(value))
-        End Function
+        Public Sub PostValue(<FromBody()> ByVal value As String)
+
+        End Sub
 
         ' PUT: api/Test/5
         Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)

@@ -1,6 +1,10 @@
 ﻿var app = angular.module("app", ["ngRoute"]);
 app.config(function ($routeProvider, $locationProvider) {
     var templatesDir = "/Templates/";
+    //$locationProvider.html5Mode({
+    //    enabled: true,
+    //    requireBase: false
+    //});
     $routeProvider
     .when("/", {
         templateUrl: templatesDir + "Index.html",
@@ -22,43 +26,26 @@ app.config(function ($routeProvider, $locationProvider) {
 app.controller('homeController', function ($scope, apiService) {
     $scope.message = "This message is from the Home controller";
 
-    $scope.testGetRequest = function() {
+    $scope.buttonClick = function () {
         apiService.GetRequest("test", "2");
-    };
-
-    $scope.testPostRequest = function () {
-        apiService.PostRequest("test", "3");
     };
 });
 
-app.controller('testController', function($scope) {
+app.controller('testController', function ($scope) {
     $scope.message = "This message is from the Test controller";
 });
 
-app.factory("apiService", function($http) {
+app.factory("apiService", function ($http) {
     var url = "/api/";
 
     return {
-        GetRequest: function(path, parameters) {
+        GetRequest: function (path, parameters) {
             $http({
                 method: 'GET',
                 url: url + path + "/" + parameters
             })
             .then(function successCallback(response) {
                 alert("Success");
-            },
-            function errorCallback(response) {
-                alert("Failure");
-            });
-        },
-        PostRequest: function(path, parameters) {
-            $http({
-                method: 'POST',
-                url: url + path + "/",
-                data: parameters
-            })
-            .then(function successCallback(response) {
-                alert(response.data);
             },
             function errorCallback(response) {
                 alert("Failure");
