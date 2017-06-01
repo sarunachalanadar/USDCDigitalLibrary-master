@@ -1,55 +1,68 @@
 ﻿var app = angular.module("app", ["ngRoute"]);
 app.config(function ($routeProvider, $locationProvider) {
-    var templatesDir = "/Templates/";
-    //$locationProvider.html5Mode({
-    //    enabled: true,
-    //    requireBase: false
-    //});
-    $routeProvider
+	var templatesDir = "/Templates/";
+	$routeProvider
     .when("/", {
-        templateUrl: templatesDir + "Index.html",
-        controller: "homeController"
+    	templateUrl: templatesDir + "Index.html",
+    	controller: "homeController"
     })
     .when("/home", {
-        templateUrl: templatesDir + "Index.html",
-        controller: "homeController"
+    	templateUrl: templatesDir + "Index.html",
+    	controller: "homeController"
     })
     .when("/test", {
-        templateUrl: templatesDir + "Test.html",
-        controller: "testController"
+    	templateUrl: templatesDir + "Test.html",
+    	controller: "testController"
     })
     .otherwise({
-        redirectTo: "/"
+    	redirectTo: "/"
     });
 });
 
 app.controller('homeController', function ($scope, apiService) {
-    $scope.message = "This message is from the Home controller";
+	$scope.message = "This message is from the Home controller";
 
-    $scope.buttonClick = function () {
-        apiService.GetRequest("test", "2");
-    };
+	$scope.testGet = function () {
+		apiService.GetRequest("test", "2");
+	};
+
+	$scope.testPost = function () {
+		apiService.PostRequest("test", "3");
+	}
 });
 
 app.controller('testController', function ($scope) {
-    $scope.message = "This message is from the Test controller";
+	$scope.message = "This message is from the Test controller";
 });
 
 app.factory("apiService", function ($http) {
-    var url = "/api/";
+	var url = "/api/";
 
-    return {
-        GetRequest: function (path, parameters) {
-            $http({
-                method: 'GET',
-                url: url + path + "/" + parameters
-            })
+	return {
+		GetRequest: function (path, parameters) {
+			$http({
+				method: 'GET',
+				url: url + path + "/" + parameters
+			})
             .then(function successCallback(response) {
-                alert("Success");
+            	alert(response.data);
             },
             function errorCallback(response) {
-                alert("Failure");
+            	alert("Error");
             });
-        }
-    }
+		},
+		PostRequest: function (path, parameters) {
+			$http({
+				method: 'POST',
+				url: url + path,
+				data: parameters
+			})
+			.then(function successCallback(response) {
+				alert(response.data);
+			},
+			function errorCallback(response) {
+				alert("Error");
+			});
+		}
+	}
 });
