@@ -17,18 +17,38 @@ app.config(function ($routeProvider, $locationProvider) {
     .when("/test", {
         templateUrl: templatesDir + "Test.html",
         controller: "testController"
+        })
+    .when("/dashboard", {
+        templateUrl: templatesDir + "Dashboard.html",
+        controller: "homeController"
     })
     .otherwise({
         redirectTo: "/"
     });
 });
 
-app.controller('homeController', function ($scope, apiService) {
+app.controller('homeController', function ($scope, apiService,$location) {
     $scope.message = "This message is from the Home controller";
+    $scope.isAuthenticated = false;
 
     $scope.buttonClick = function () {
         apiService.GetRequest("test", "2");
     };
+    
+    $scope.login = function () {
+        $scope.isAuthenticated = true;
+        $location.path('/dashboard');
+    };
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+
+    $scope.$on('$locationChangeSuccess', function (/* EDIT: remove params for jshint */) {
+        if ($scope.isAuthenticated == true) {
+            $location.path('/dashboard');
+        }
+    });
+
 });
 
 app.controller('testController', function ($scope) {
@@ -52,4 +72,11 @@ app.factory("apiService", function ($http) {
             });
         }
     }
+});
+
+app.controller('dashboardController', function ($scope) {
+    $scope.message = "This message is from the Test controller";
+    $scope.isAuthenticated = false;
+    $scope.FirstName = "John";
+    $scope.LastName = "Smith";
 });
