@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\SolrController.vb" />
     <Compile Include="Controllers\TestController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,9 +194,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\landing-page.css" />
-    <Content Include="Content\metisMenu.min.css" />
-    <Content Include="Content\morris.css" />
-    <Content Include="Content\sb-admin-2.css" />
     <Content Include="fonts\font-awesome\css\font-awesome.css" />
     <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -265,20 +263,17 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\morris-data.js" />
-    <Content Include="Scripts\morris.min.js" />
-    <Content Include="Scripts\raphael.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Templates\Dashboard.html" />
     <Content Include="Templates\DashInclude.html" />
     <Content Include="Templates\Footer.html" />
     <Content Include="Templates\Header.html" />
     <Content Include="Templates\HeaderAfterLogin.html" />
     <Content Include="Templates\Index.html" />
+    <Content Include="Templates\LoginModal.html" />
+    <Content Include="Templates\Search.html" />
     <Content Include="Templates\Test.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

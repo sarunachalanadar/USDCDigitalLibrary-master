@@ -59,8 +59,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1-2">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Calendar</a></li>
-            <li class="dropdown">
+            <li ng-show="isAdmin"><a href="#"><span class="glyphicon glyphicon glyphicon-plus"></span>Add Item</a></li>
+            <!--<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-list-alt"></span>Widgets <b class="caret"></b>
                 </a>
@@ -73,7 +73,7 @@
                     <li class="divider"></li>
                     <li><a href="#">One more separated link</a></li>
                 </ul>
-            </li>
+            </li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -122,31 +122,16 @@
 </nav>
 <form role="search" ng-show="isAuthenticated">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" />
+        <input type="text" class="form-control" placeholder="Search" ng-model="q.queryString"/>
         <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">
+            <button class="btn btn-primary" type="button" ng-click="Search()">
                 Go!
             </button>
         </span>
     </div>
 </form>
 
+<div id="login-modal"  ng-include="'Templates/LoginModal.html'" class="modal fade" role="dialog" ></div>
 
-    <div class="modal fade" id="login-modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="loginmodal-container">
-                <h1>Login to Your Account</h1><br>
-                <form>
-                    <input type="text" name="user" placeholder="Username">
-                    <input type="password" name="pass" placeholder="Password">
-                    <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()" data-dismiss="modal">
-                </form>
-
-                <div class="login-help">
-                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 

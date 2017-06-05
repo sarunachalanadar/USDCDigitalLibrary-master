@@ -32,7 +32,7 @@
     <div id="wrapper">
         <header ng-include="'Templates/Header.html'"></header>        
         @RenderBody()
-        <footer class="navbar-fixed-bottom" ng-include="'Templates/Footer.html'" style="padding:20px 0;"></footer>
+        <footer class="navbar-fixed-bottom" ng-include="'Templates/Footer.html'" style="padding:10px 0;"></footer>
     </div>
         <!-- jQuery -->
         <script src="../Scripts/jquery-1.10.2.js"></script>

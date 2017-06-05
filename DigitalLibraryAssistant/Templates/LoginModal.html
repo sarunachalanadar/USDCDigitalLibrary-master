@@ -1,0 +1,17 @@
+﻿<!--<div class="modal fade" id="login-modal" role="dialog">-->
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Login to Your Account</h1><br>
+            <form>
+                <input type="text" name="user" placeholder="Username" ng-model="formData.username">
+                {{formData.username}}
+                <input type="password" name="pass" placeholder="Password" ng-model="formData.password">
+                <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()" data-dismiss="modal">
+            </form>
+
+            <div class="login-help">
+                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+<!--</div>-->
