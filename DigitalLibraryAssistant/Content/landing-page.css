@@ -344,15 +344,22 @@ p.copyright {
         float: left;
     }
 
+    .card .rentbtn {
+        position: relative;
+        margin: 15px 15px 5px 15px;
+        z-index: 100;
+        float: right;
+    }
+
 .profileImg {
 }
 
 .card .avatar img {
     width: 80px;
     height: 80px;
-    -webkit-border-radius: 50%;
+    /*-webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    border-radius: 50%;
+    border-radius: 50%;*/
 }
 
 .pager li {
