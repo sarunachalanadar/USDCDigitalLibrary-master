@@ -1,0 +1,48 @@
+﻿<br /><br /><br /><br />
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Add Item
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div ng-controller="itemController">
+                    <form name="itemForm" ng-controller="itemController" ng-app="app" novalidate>
+                        <p>Title:<br/>
+                            <input type="text" name="title" ng-model="Item.Title" required/>
+                            <span style="color:red" ng-show="itemForm.title.$touched && itemForm.title.$invalid">
+                            <span ng-show="itemForm.title.$error.required">Title is required.</span>
+                            </span>
+                        </p>
+                        <p>
+                            Author:<br />
+                            <input type="text" name="author" ng-model="Item.Author" required />
+                            <span style="color:red" ng-show="itemForm.author.$touched && itemForm.author.$invalid">
+                                <span ng-show="itemForm.author.$error.required">Author is required.</span>
+                            </span>
+                        </p>
+                        <p>
+                            ISBN:<br />
+                            <input type="text" name="isbn" ng-model="Item.ISBN" required />
+                            <span style="color:red" ng-show="itemForm.isbn.$touched && itemForm.isbn.$invalid">
+                                <span ng-show="itemForm.isbn.$error.required">ISBN is required.</span>
+                            </span>
+                        </p>
+                        <p>
+                            Image URL:<br />
+                            <input type="url" name="imageurl" ng-model="Item.ImageUrl"/>
+                            <span style="color:red" ng-show="itemForm.imageurl.$touched && itemForm.imageurl.$invalid">
+                                <span ng-show="itemForm.imageurl.$error.url">Invalid URL.</span>
+                            </span>
+                        </p>
+                        <input type="submit" ng-disabled="itemForm.title.$invalid || 
+                                itemForm.author.$invalid || 
+                                itemForm.isbn.$invalid ||
+                                itemForm.imageurl.$invalid" name="addBook" value="Add" ng-click="addItem()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

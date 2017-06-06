@@ -160,6 +160,8 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\AddItemController.vb" />
+    <Compile Include="Controllers\RentController.vb" />
     <Compile Include="Controllers\SolrController.vb" />
     <Compile Include="Controllers\TestController.vb" />
     <Compile Include="Global.asax.vb">
@@ -266,6 +268,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Templates\AddItem.html" />
     <Content Include="Templates\Dashboard.html" />
     <Content Include="Templates\DashInclude.html" />
     <Content Include="Templates\Footer.html" />
@@ -290,7 +293,9 @@
     <Content Include="Views\Home\Index.vbhtml" />
     <Content Include="Views\Shared\Error.vbhtml" />
     <Content Include="Views\Shared\_Layout.vbhtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
